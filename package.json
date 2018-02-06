@@ -1,0 +1,19 @@
+{
+  "name": "objecttimeline",
+  "version": "1.0.0",
+  "description": "针对javascript中JSON对象的浏览器端自动保存修改历史的工具",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hotjp/objectTimeLine.git"
+  },
+  "author": "hotjp@126.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hotjp/objectTimeLine/issues"
+  },
+  "homepage": "https://github.com/hotjp/objectTimeLine#readme"
+}
