@@ -18,8 +18,7 @@
     "url": "https://github.com/hotjp/objectTimeLine/issues"
   },
   "homepage": "https://github.com/hotjp/objectTimeLine#readme",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-loader": "^6.4.0",
