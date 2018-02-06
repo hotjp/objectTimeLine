@@ -1,6 +1,7 @@
 {
   "name": "objecttimeline",
   "version": "1.0.0",
+  "keyword": "对象历史记录,历史记录,object history",
   "description": "针对javascript中JSON对象的浏览器端自动保存修改历史的工具",
   "main": "index.js",
   "scripts": {
