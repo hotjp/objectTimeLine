@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    textarea {
+      vertical-align: top
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="init">
+    初始化：
+    <code>
+      var foo = new TimeLine(options)
+    </code>
+  </div>
+  json字符串：
+  <textarea name="json" id="json" cols="30" rows="10">{a:1,b:2}</textarea>
+  <button id="addTime">加入历史记录</button>
+  <script src="../dist/objectTimeLine.js"></script>
+  <script>
+    // example
+    var timeLine = new TimeLine({
+      // 时间线
+      timeLineOpt: {
+        // 历史记录最大值
+        maxLength: 3,
+        // 历史记录连续保存节流间隔
+        throttleInterval: 1e2,
+        // 是否去重
+        uniq: true
+      },
+      // 自动备份，默认保存在storage里，用的时候记得合并进正常数据避免丢失原型
+      backupOpt: {
+        // 没有自定义name则由’backup'+_initTime命名
+        name: '',
+        // 是否自动备份
+        autoBackup: true,
+        // 自动备份间隔
+        backupInterval: 5 * 1e3,
+        // 备份行为有则发送深拷贝的对象,没有则丢进locastorage
+        setBackupAction: null,
+        getBackupAction: null,
+        // 备份回调，默认不输出信息
+        backupCallback: function () {
+          console.log('已自动备份');
+        }
+      },
+      // 备份对象的初值
+      treasures: {}
+    });
+    $('#addTime').addEventListener('click', function () {
+      try {
+        var obj = JSON.parse($('#json').value);
+        timeLine.snapshoot(obj);
+      } catch (error) {
+        console.error(error);
+      }
+    });
+  </script>
+</body>
+
+</html>

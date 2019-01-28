@@ -1,0 +1,5 @@
+{
+  "globalDevDependencies": {
+    "gulp-load-plugins": "registry:dt/gulp-load-plugins#0.0.0+20160510010627"
+  }
+}
